@@ -25,7 +25,7 @@ export class FormComponent {
     
 
   onSubmit() {
-    console.log("submit!", this.myForm.value);
+    // console.log("submit!", this.myForm.value);
     axios({
       method: 'post',
       url: '/',
@@ -35,7 +35,7 @@ export class FormComponent {
       console.log(response);
     })
     .catch(err => {
-      console.log(err);
+      console.log("error occured: ", err);
     })
   }
 }
