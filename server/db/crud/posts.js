@@ -34,7 +34,14 @@ async function getPosts(postModel) {
   if (posts.length == 0) {
     throw new Error('No user with the email provided');
   }
-  return posts[0].dataValues;
+
+  let values = [];
+
+  for (var i = 0; i < posts.length; i++) {
+    values.push(posts[i].dataValues);
+  }
+  // console.log(values)
+  return values;
 }
 
 module.exports =

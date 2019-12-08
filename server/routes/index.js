@@ -38,14 +38,20 @@ router.get('/ping', function(req, res) {
   res.status(200).send('pong');
 });
 
-router.get('/posts', function(req, res ) {
-  res.status(200).send('response');
+/* POST get all posts from the db */
+router.get('/posts', async function(req, res) {
+  try {
+    var model = postModel(sequelize, Sequelize);
+    var data = await postOperations.getPosts(model);
+    res.status(200).send(data);
+  } catch (err) {
+    res.status(400).send('Error occured:', err);
+  }
 });
 
 /* POST save data to db */
 router.post('/', async function(req, res){
   try {
-    console.log(req.body);
     var model = postModel(sequelize, Sequelize);
     // save data to the db
     await postOperations.createPost(model, req.body);
