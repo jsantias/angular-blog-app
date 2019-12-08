@@ -11,7 +11,7 @@ function createPost(postModel, data) {
       title: data.title,
       body: data.body,
       category: data.category,
-      subjecturl: data.subjecturl
+      subjectURL: data.subjecturl
     }).then(response => {
       resolve(response)
     }).catch(error => {

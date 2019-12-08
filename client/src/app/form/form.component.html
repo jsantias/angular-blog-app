@@ -3,10 +3,12 @@
     <mat-form-field>
         <input matInput placeholder="Title" formControlName="title">
     </mat-form-field>
+    <br />
 
     <mat-form-field>
         <textarea matInput placeholder="Body" formControlName="body"></textarea>
     </mat-form-field>
+    <br />
 
     <mat-form-field>
         <mat-select placeholder="Category" formControlName="category">
@@ -15,10 +17,11 @@
             <mat-option value="Video">Video</mat-option>
         </mat-select>
     </mat-form-field>
+    <br />
 
     <mat-form-field>
-        <textarea matInput placeholder="Subject URL" formControlName="subject"></textarea>
+        <input matInput placeholder="Subject URL" formControlName="subject">
     </mat-form-field>
 
-    <button mat-stroked-button type="submit" style="width:100%">Submit</button>
+    <button mat-stroked-button type="submit" (click)="exit()" style="width:100%">Submit</button>
 </form>
