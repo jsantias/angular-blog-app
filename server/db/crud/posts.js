@@ -1,22 +1,17 @@
-const bcrypt = require('bcrypt');
-
 /* 
-* Create new user account 
+* Save new post in the db
 *
 * params 
-*   @userModel - the defined userModel
-*   @data - Object containing email and password
+*   @postModel - the defined postModel
+*   @data - Object containing title, body, category, and subject URL
 */
-function createAccount(userModel, data) {
+function createPost(postModel, data) {
   return new Promise(async (resolve, reject) => {
-    var hashedPassword = await bcrypt.hash(data.password, 10);
-    userModel.create({
-      email: data.email,
-      password: hashedPassword,
-      phone: data.phone,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      studentYear: data.studentYear
+    postModel.create({
+      title: data.title,
+      body: data.body,
+      category: data.category,
+      subjecturl: data.subjecturl
     }).then(response => {
       resolve(response)
     }).catch(error => {
@@ -26,28 +21,24 @@ function createAccount(userModel, data) {
 }
 
 /* 
-* Find user
+* Returns all posts from the db
 *
 * params
 *   @userModel - the defined userModel
 *   @email - user's email/username
 */
-async function findUser(userModel, email) {
-  // Find user with the given email
-  const user = await userModel.findAll({
-    where: {
-      email: email
-    }
-  });
+async function getPosts(postModel) {
+  // Find all posts
+  const posts = await postModel.findAll();
 
-  if (user.length == 0) {
+  if (posts.length == 0) {
     throw new Error('No user with the email provided');
   }
-  return user[0].dataValues;
+  return posts[0].dataValues;
 }
 
 module.exports =
   {
-    createAccount,
-    findUser
+    createPost,
+    getPosts
   }
