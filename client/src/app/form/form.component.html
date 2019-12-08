@@ -1,0 +1,24 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Body"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Category" formControlName="category">
+            <mat-option value="option">Lifestyle</mat-option>
+            <mat-option value="option">Travel</mat-option>
+            <mat-option value="option">Video</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Subject URL" formControlName="subject"></textarea>
+    </mat-form-field>
+
+    <button mat-stroked-button type="submit" style="width:100%">Submit</button>
+</form>
