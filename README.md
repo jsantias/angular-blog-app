@@ -37,6 +37,9 @@ Client side uses the Angular framework and is proxied to the node server for run
 
 Client runs on port 4200, Server runs on port 4201
 
+## Environment Variables 
+A file '.env' needs to be created inside of the server folder in order to connect to the db
+
 ## Authors
 
 - **John Santias** - Full Stack Developer - [AsianJohnBoi](https://github.com/AsianJohnBoi)
