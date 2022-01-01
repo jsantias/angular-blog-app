@@ -1,8 +1,5 @@
 # Gwats
-This project was created during an interview code test
-
-Task Objective:
-The task is a simple web application that when loaded retrieves all previous user submissions from the server via a HTTP GET request and displays them in a vertical list, similar to a blog however anyone can make a new post. The list of user posts is ordered with the newest posts first. If a post has a Subject URL included then an iframe using the Subject URL as the source is displayed between directly below the post's title, this is to let users show the website they're talking about in their post.
+A simple web application that when loaded retrieves all previous user submissions from the server via a HTTP GET request and displays them in a vertical list, similar to a blog however anyone can make a new post. The list of user posts is ordered with the newest posts first. If a post has a Subject URL included then an iframe using the Subject URL as the source is displayed between directly below the post's title, this is to let users show the website they're talking about in their post.
 
 At the top of the page there is a 'Submit new post' button which should open a modal form. This form has 4 fields:
 
